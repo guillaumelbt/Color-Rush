@@ -11,6 +11,7 @@ using UnityEngine.InputSystem.Controls;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float speed = 8;
+    [SerializeField] private SpriteRenderer sr;
     private Rigidbody2D rb;
     private PlayerInput inputs;
     private void Awake()
@@ -42,5 +43,15 @@ public class PlayerController : MonoBehaviour
         pos.x = Mathf.Clamp(pos.x,- screenBounds.x + transform.localScale.x/2,screenBounds.x - transform.localScale.x/2);
         pos.y = Mathf.Clamp(pos.y,- screenBounds.y +transform.localScale.x/2,screenBounds.y - transform.localScale.x/2);
         transform.position = pos;
+    }
+    
+    
+    private void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.transform.GetComponent<Cube>())
+        {
+            sr.color = col.transform.GetComponent<Cube>().color;
+            Pooler.instance.Depop("Cube",col.gameObject);
+        }
     }
 }
