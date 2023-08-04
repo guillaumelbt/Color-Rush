@@ -167,6 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 166ca2d1d4fbb9440bb6121b3b25ca77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timerImage: {fileID: 1185367291}
 --- !u!1001 &101796996
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -754,7 +755,7 @@ GameObject:
   - component: {fileID: 1980572973}
   m_Layer: 0
   m_Name: Generator
-  m_TagString: Untagged
+  m_TagString: Generator
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
