@@ -22,7 +22,10 @@ public class Station : MonoBehaviour
     private StationState state = StationState.Search;
     private float elapsedTime = 0;
 
-    private GameObject cube;
+    private Cube cube;
+
+    public Color Color => cube.color;
+    public bool HasCube => cube != null;
     private void Update()
     {
         switch (state)
@@ -44,12 +47,11 @@ public class Station : MonoBehaviour
         if (!(Time.time - elapsedTime > 1)) return;
         elapsedTime = Time.time;
         float rnd = Random.Range(0f, 1f);
-        Debug.Log(rnd);
         if (rnd <= probability)
         {
-            Debug.Log("Success");
             state = StationState.Cube;
-            cube = Pooler.instance.Pop("Cube");
+            GameObject go = Pooler.instance.Pop("Cube");
+            cube = go.GetComponent<Cube>();
             cube.transform.position = transform.position;
         }
     }
@@ -57,10 +59,7 @@ public class Station : MonoBehaviour
     private void Cube()
     {
         if (!(Time.time - elapsedTime > cubeLifeTime)) return;
-        elapsedTime = Time.time;
-        state = StationState.Cooldown;
-        Pooler.instance.Depop("Cube",cube);
-        cube = null;
+        RemoveCube();
     }
 
     private void Cooldown()
@@ -68,5 +67,13 @@ public class Station : MonoBehaviour
         if (!(Time.time - elapsedTime > cooldown)) return;
         elapsedTime = Time.time;
         state = StationState.Search;
+    }
+
+    public void RemoveCube()
+    {
+        elapsedTime = Time.time;
+        state = StationState.Cooldown;
+        Pooler.instance.Depop("Cube",cube.gameObject);
+        cube = null;
     }
 }
