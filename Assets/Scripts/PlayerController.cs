@@ -99,15 +99,37 @@ public class PlayerController : MonoBehaviour
         pos.y = Mathf.Clamp(pos.y,- screenBounds.y +transform.localScale.x/2,screenBounds.y - transform.localScale.x/2);
         transform.position = pos;
     }
-    
-    
+
+    private Coroutine colorCoroutine;
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (!col.GetComponent<Station>()) return;
-        Debug.Log("collide");
-        var station = col.GetComponent<Station>();
-        if (!station.HasCube) return;
-        sr.color = station.Color;
-        station.RemoveCube();
+        if (sr.color == Color.white)
+        {
+            if (col.GetComponent<Station>())
+            {
+                Debug.Log("collide");
+                var station = col.GetComponent<Station>();
+                if (!station.HasCube) return;
+                sr.color = station.Color;
+                colorCoroutine = StartCoroutine(ColorCoroutine());
+                station.RemoveCube();
+            }
+        }
+        else
+        {
+            if (col.CompareTag("Generator"))
+            {
+                StopCoroutine(colorCoroutine);
+                sr.color = Color.white;
+                GameManager.instance.ChangeTimer(5);
+            }
+        }
+    }
+    
+    IEnumerator ColorCoroutine()
+    {
+        yield return new WaitForSeconds(3);
+        sr.color = Color.white;
+        GameManager.instance.ChangeTimer(-3);
     }
 }
