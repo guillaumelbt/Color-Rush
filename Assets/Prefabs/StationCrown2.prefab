@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 8970216274663820224}
   - component: {fileID: 9133966718981350004}
   m_Layer: 0
-  m_Name: Station
+  m_Name: StationCrown2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -135,6 +135,7 @@ MonoBehaviour:
   probability: 0.2
   cubeLifeTime: 5
   cooldown: 15
+  crown: 1
 --- !u!61 &9133966718981350004
 BoxCollider2D:
   m_ObjectHideFlags: 0

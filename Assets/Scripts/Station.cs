@@ -13,11 +13,19 @@ public class Station : MonoBehaviour
         Cube,
         Cooldown
     }  
+    public enum Crown
+    {
+        One,
+        Two,
+        Three
+    }  
     
     [Range(0,1)]
     [SerializeField] private float probability = 0.2f;
     [SerializeField] private float cubeLifeTime = 5f;
     [SerializeField] private float cooldown = 15f;
+    
+    [SerializeField] private Crown crown = Crown.One;
     
     private StationState state = StationState.Search;
     private float elapsedTime = 0;
@@ -26,8 +34,42 @@ public class Station : MonoBehaviour
 
     public Color Color => cube.color;
     public bool HasCube => cube != null;
+
+
+    private void Start()
+    {
+        InitData();
+    }
+
+    private void InitData()
+    {
+        switch (crown)
+        {
+            case Crown.One:
+                probability = GameManager.instance.data.probability.x;
+                cubeLifeTime = GameManager.instance.data.cubeLifeTimeInStation.x;
+                cooldown = GameManager.instance.data.cooldown.x;
+                ;
+                break;
+            case Crown.Two:
+                probability = GameManager.instance.data.probability.y;
+                cubeLifeTime = GameManager.instance.data.cubeLifeTimeInStation.y;
+                cooldown = GameManager.instance.data.cooldown.y;
+                break;
+            case Crown.Three:
+                probability = GameManager.instance.data.probability.z;
+                cubeLifeTime = GameManager.instance.data.cubeLifeTimeInStation.z;
+                cooldown = GameManager.instance.data.cooldown.z;
+                break;
+        }
+    }
+
     private void Update()
     {
+#if UNITY_EDITOR
+        InitData();
+#endif
+        
         switch (state)
         {
             case StationState.Search :

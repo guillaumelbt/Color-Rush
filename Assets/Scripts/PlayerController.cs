@@ -25,12 +25,39 @@ public class PlayerController : MonoBehaviour
     private Vector2 targetVelocity;
     private Vector2 lastDirection = Vector2.up;
     private bool isDashing;
-    
+    private float malus;
+    private float bonus;
+    private float lifeTime;
     
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         inputs = GetComponent<PlayerInput>();
+    }
+
+    private void Start()
+    {
+        InitData();
+    }
+
+    void InitData()
+    {
+        accelSpeed = GameManager.instance.data.accelerationSpeed;
+        maxForce = GameManager.instance.data.maximumForce;
+        speed = GameManager.instance.data.maxSpeed;
+        dashDistance = GameManager.instance.data.dashDistance;
+        dashDuration = GameManager.instance.data.dashDuration;
+        lifeTime = GameManager.instance.data.cubeLifeTimePickedUp;
+        malus = GameManager.instance.data.cubeMalus;
+        bonus = GameManager.instance.data.cubeBonus;
+
+    }
+
+    private void Update()
+    {
+#if UNITY_EDITOR
+        InitData();
+#endif
     }
 
     private void FixedUpdate()
@@ -121,15 +148,15 @@ public class PlayerController : MonoBehaviour
             {
                 StopCoroutine(colorCoroutine);
                 sr.color = Color.white;
-                GameManager.instance.ChangeTimer(5);
+                GameManager.instance.ChangeTimer(bonus);
             }
         }
     }
     
     IEnumerator ColorCoroutine()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(lifeTime);
         sr.color = Color.white;
-        GameManager.instance.ChangeTimer(-3);
+        GameManager.instance.ChangeTimer(-malus);
     }
 }

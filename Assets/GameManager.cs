@@ -6,11 +6,17 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    
+    public GameData data;
     [SerializeField] private Image timerImage;
 
     private float timer = 30;
-    
+    private int lifeLeft;
+
+    void Start()
+    {
+        timer = data.timer;
+        lifeLeft = data.lifeNumber;
+    }
     void Awake()
     {
         if (instance == null)
@@ -21,14 +27,18 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        timerImage.fillAmount = timer / 30;
+        timerImage.fillAmount = timer / data.timer;
         timer -= Time.deltaTime;
-        if(timer <= 0) Application.Quit();
+        if (timer <= 0)
+        {
+            lifeLeft--;
+            if(lifeLeft < 0) Application.Quit();
+        }
     }
 
     public void ChangeTimer(float amount)
     {
         timer += amount;
-        timer = Mathf.Clamp(timer, 0, 30);
+        timer = Mathf.Clamp(timer, 0, data.timer);
     }
 }

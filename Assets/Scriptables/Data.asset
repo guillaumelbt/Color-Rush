@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c37378b58c633e843ab275e65551c34a, type: 3}
+  m_Name: Data
+  m_EditorClassIdentifier: 
+  timer: 30
+  lifeNumber: 3
+  cubeBonus: 5
+  cubeMalus: 3
+  maxSpeed: 6
+  maximumForce: 200
+  accelerationSpeed: 150
+  dashDuration: 0.2
+  dashDistance: 3
+  probability: {x: 0.2, y: 0.2, z: 0.2}
+  cubeLifeTimeInStation: {x: 5, y: 5, z: 5}
+  cooldown: {x: 15, y: 15, z: 15}
+  colors: []
+  cubeLifeTimePickedUp: 5
