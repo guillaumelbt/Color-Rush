@@ -13,7 +13,13 @@ public class Cube : MonoBehaviour
     
     private void Start()
     {
-        color = Random.ColorHSV();
+        if(GameManager.instance.data.colors.Length < 1 )
+            color = Random.ColorHSV();
+        else
+        {
+            var rnd = Random.Range(0, GameManager.instance.data.colors.Length);
+            color = GameManager.instance.data.colors[rnd];
+        }
         sr = GetComponent<SpriteRenderer>();
         sr.color = color;
     }
