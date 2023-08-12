@@ -11,7 +11,7 @@ public class Cube : MonoBehaviour
     private float lifeTime;
     private float elapsedTime = 0;
 
-    public float LifeTime => Time.time - elapsedTime / lifeTime;
+    public float LifeTime => (Time.time - elapsedTime) / lifeTime;
     public bool isAlive => Time.time - elapsedTime > lifeTime;
     private SpriteRenderer sr;
     public Color color;
@@ -25,6 +25,12 @@ public class Cube : MonoBehaviour
     {
         lifeTime = GameManager.instance.data.cubeLifeTime;
     }
+
+    private void OnEnable()
+    {
+        elapsedTime = Time.time;
+    }
+
     public void ChangeColor()
     {
         if(GameManager.instance.data.colors.Length < 1 )
@@ -36,6 +42,6 @@ public class Cube : MonoBehaviour
         }
         
         sr.color = color;
-        elapsedTime = Time.time;
+        
     }
 }

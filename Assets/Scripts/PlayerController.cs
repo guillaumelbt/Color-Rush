@@ -129,9 +129,7 @@ public class PlayerController : MonoBehaviour
             {
                 var station = col.GetComponent<Station>();
                 if (!station.HasCube) return;
-
                 score = GameManager.instance.CalculateScore(station.CurrentCube);
-
                 sr.color = station.Color;
                 station.RemoveCube();
             }
@@ -142,6 +140,7 @@ public class PlayerController : MonoBehaviour
             {
                 sr.color = Color.white;
                 GameManager.instance.score += score;
+                Debug.Log(GameManager.instance.score);
             }
         }
     }

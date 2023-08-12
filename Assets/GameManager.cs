@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,10 +13,20 @@ public class GameManager : MonoBehaviour
     public bool CanGenerateCube => cubeOnScreen < data.maxCubeOnScreen;
     
     public float score = 0;
+    private float coef;
 
     public float CalculateScore(Cube cube)
     {
-        return data.point * data.pointCurve.Evaluate(cube.LifeTime) * data.coef;
+        return data.point * data.pointCurve.Evaluate(cube.LifeTime) * coef;
+    }
+
+    private void Update()
+    {
+        if (Time.time - elapsedTime > 60)
+        {
+            elapsedTime = Time.time;
+            coef += data.coef;
+        }
     }
 
     public int Life
@@ -24,9 +35,13 @@ public class GameManager : MonoBehaviour
         set => lifeLeft = value;
     }
 
+    private float elapsedTime = 0;
+    
     void Start()
     {
         lifeLeft = data.lifeNumber;
+        coef = data.coef;
+
     }
     void Awake()
     {
