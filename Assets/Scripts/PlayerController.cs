@@ -145,6 +145,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private float score = 0;
+    private int score = 0;
     
 }

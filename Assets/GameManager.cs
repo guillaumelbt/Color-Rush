@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,18 +11,21 @@ public class GameManager : MonoBehaviour
     public GameData data;
     private int lifeLeft;
     public int cubeOnScreen;
+    [SerializeField] private TMP_Text scoreText;
     public bool CanGenerateCube => cubeOnScreen < data.maxCubeOnScreen;
     
-    public float score = 0;
+    public int score = 0;
     private float coef;
 
-    public float CalculateScore(Cube cube)
+    public int CalculateScore(Cube cube)
     {
-        return data.point * data.pointCurve.Evaluate(cube.LifeTime) * coef;
+        return Mathf.RoundToInt(data.point * data.pointCurve.Evaluate(cube.LifeTime) * coef);
     }
 
     private void Update()
     {
+        scoreText.text = $"Score : {score}";
+
         if (Time.time - elapsedTime > 60)
         {
             elapsedTime = Time.time;
