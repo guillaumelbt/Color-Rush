@@ -25,8 +25,6 @@ public class PlayerController : MonoBehaviour
     private Vector2 targetVelocity;
     private Vector2 lastDirection = Vector2.up;
     private bool isDashing;
-    private float malus;
-    private float bonus;
     private float lifeTime;
     
     private void Awake()
@@ -47,10 +45,6 @@ public class PlayerController : MonoBehaviour
         speed = GameManager.instance.data.maxSpeed;
         dashDistance = GameManager.instance.data.dashDistance;
         dashDuration = GameManager.instance.data.dashDuration;
-        lifeTime = GameManager.instance.data.cubeLifeTimePickedUp;
-        malus = GameManager.instance.data.cubeMalus;
-        bonus = GameManager.instance.data.cubeBonus;
-
     }
 
     private void Update()
@@ -127,18 +121,18 @@ public class PlayerController : MonoBehaviour
         transform.position = pos;
     }
 
-    private Coroutine colorCoroutine;
     private void OnTriggerEnter2D(Collider2D col)
     {
         if (sr.color == Color.white)
         {
             if (col.GetComponent<Station>())
             {
-                Debug.Log("collide");
                 var station = col.GetComponent<Station>();
                 if (!station.HasCube) return;
+
+                score = GameManager.instance.CalculateScore(station.CurrentCube);
+
                 sr.color = station.Color;
-                colorCoroutine = StartCoroutine(ColorCoroutine());
                 station.RemoveCube();
             }
         }
@@ -146,17 +140,12 @@ public class PlayerController : MonoBehaviour
         {
             if (col.CompareTag("Generator"))
             {
-                StopCoroutine(colorCoroutine);
                 sr.color = Color.white;
-                GameManager.instance.ChangeTimer(bonus);
+                GameManager.instance.score += score;
             }
         }
     }
+
+    private float score = 0;
     
-    IEnumerator ColorCoroutine()
-    {
-        yield return new WaitForSeconds(lifeTime);
-        sr.color = Color.white;
-        GameManager.instance.ChangeTimer(-malus);
-    }
 }

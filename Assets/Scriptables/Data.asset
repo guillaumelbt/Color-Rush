@@ -12,17 +12,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c37378b58c633e843ab275e65551c34a, type: 3}
   m_Name: Data
   m_EditorClassIdentifier: 
-  timer: 30
   lifeNumber: 3
-  cubeBonus: 5
-  cubeMalus: 3
+  maxCubeOnScreen: 3
+  coef: 1.5
+  point: 100
+  pointCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: -1
+      outSlope: -1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: -1
+      outSlope: -1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   maxSpeed: 6
   maximumForce: 200
   accelerationSpeed: 150
   dashDuration: 0.2
   dashDistance: 3
   probability: {x: 0.2, y: 0.2, z: 0.2}
-  cubeLifeTimeInStation: {x: 5, y: 5, z: 5}
-  cooldown: {x: 15, y: 15, z: 15}
-  colors: []
-  cubeLifeTimePickedUp: 5
+  cooldown: 15
+  colors:
+  - {r: 0.9019608, g: 0, b: 0, a: 1}
+  cubeLifeTime: 10

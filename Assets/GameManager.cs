@@ -7,14 +7,25 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     public GameData data;
-    [SerializeField] private Image timerImage;
-
-    private float timer = 30;
     private int lifeLeft;
+    public int cubeOnScreen;
+    public bool CanGenerateCube => cubeOnScreen < data.maxCubeOnScreen;
+    
+    public float score = 0;
+
+    public float CalculateScore(Cube cube)
+    {
+        return data.point * data.pointCurve.Evaluate(cube.LifeTime) * data.coef;
+    }
+
+    public int Life
+    {
+        get => lifeLeft;
+        set => lifeLeft = value;
+    }
 
     void Start()
     {
-        timer = data.timer;
         lifeLeft = data.lifeNumber;
     }
     void Awake()
@@ -23,22 +34,5 @@ public class GameManager : MonoBehaviour
             instance = this;
         else
             Destroy(gameObject);
-    }
-
-    void Update()
-    {
-        timerImage.fillAmount = timer / data.timer;
-        timer -= Time.deltaTime;
-        if (timer <= 0)
-        {
-            lifeLeft--;
-            if(lifeLeft < 0) Application.Quit();
-        }
-    }
-
-    public void ChangeTimer(float amount)
-    {
-        timer += amount;
-        timer = Mathf.Clamp(timer, 0, data.timer);
     }
 }

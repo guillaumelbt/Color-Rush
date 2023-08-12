@@ -133,9 +133,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   probability: 0.2
-  cubeLifeTime: 5
   cooldown: 15
   crown: 2
+  col: {fileID: 4060853938073479644}
 --- !u!61 &9133966718981350004
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -8,10 +8,24 @@ using Random = UnityEngine.Random;
 [RequireComponent(typeof(SpriteRenderer))]
 public class Cube : MonoBehaviour
 {
+    private float lifeTime;
+    private float elapsedTime = 0;
+
+    public float LifeTime => Time.time - elapsedTime / lifeTime;
+    public bool isAlive => Time.time - elapsedTime > lifeTime;
     private SpriteRenderer sr;
     public Color color;
-    
-    private void Start()
+
+    private void Awake()
+    {
+        sr = GetComponent<SpriteRenderer>();
+    }
+
+    void Start()
+    {
+        lifeTime = GameManager.instance.data.cubeLifeTime;
+    }
+    public void ChangeColor()
     {
         if(GameManager.instance.data.colors.Length < 1 )
             color = Random.ColorHSV();
@@ -20,8 +34,8 @@ public class Cube : MonoBehaviour
             var rnd = Random.Range(0, GameManager.instance.data.colors.Length);
             color = GameManager.instance.data.colors[rnd];
         }
-        sr = GetComponent<SpriteRenderer>();
+        
         sr.color = color;
+        elapsedTime = Time.time;
     }
-
 }

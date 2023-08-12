@@ -5,11 +5,14 @@ using UnityEngine;
 [CreateAssetMenu]
 public class GameData : ScriptableObject
 {
-    [Header("General Data")] 
-    public float timer = 30;
+    [Header("General Data")]
     public int lifeNumber = 3;
-    public float cubeBonus = 5;
-    public float cubeMalus = 3;
+    public int maxCubeOnScreen = 3;
+
+    [Header("Score")] 
+    public float coef = 1.5f;
+    public float point = 100;
+    public AnimationCurve pointCurve;
     
     [Header("Player")] 
     public float maxSpeed = 6;
@@ -21,10 +24,9 @@ public class GameData : ScriptableObject
     
     [Header("Station")] 
     public Vector3 probability = new Vector3(0.2f,0.2f,0.2f);
-    public Vector3 cubeLifeTimeInStation = new Vector3(5,5,5);
-    public Vector3 cooldown = new Vector3(15,15,15);
+    public float cooldown = 15;
 
-    [Header("Cube")] 
+    [Header("Cube")]
     public Color[] colors;
-    public float cubeLifeTimePickedUp = 5f;
+    public float cubeLifeTime = 10;
 }
