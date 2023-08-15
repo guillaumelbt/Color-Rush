@@ -3,7 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using JetBrains.Annotations;
+using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
 
 public class Station : MonoBehaviour
@@ -56,14 +58,13 @@ public class Station : MonoBehaviour
         switch (crown)
         {
             case Crown.One:
-                probability = GameManager.instance.data.probability.x;
-                ;
+                probability = GameManager.instance.CurrentLevel.crown1Probability;
                 break;
             case Crown.Two:
-                probability = GameManager.instance.data.probability.y;
+                probability = GameManager.instance.CurrentLevel.crown2Probability;
                 break;
             case Crown.Three:
-                probability = GameManager.instance.data.probability.z;
+                probability = GameManager.instance.CurrentLevel.crown3Probability;
                 break;
         }
         cooldown = GameManager.instance.data.cooldown;
@@ -71,10 +72,8 @@ public class Station : MonoBehaviour
 
     private void Update()
     {
-#if UNITY_EDITOR
         InitData();
-#endif
-        
+
         switch (state)
         {
             case StationState.Search :
@@ -115,7 +114,7 @@ public class Station : MonoBehaviour
         GameManager.instance.Life--;
         if (GameManager.instance.Life == 0)
         {
-            Application.Quit();
+            SceneManager.LoadScene(0);
         }
     }
 

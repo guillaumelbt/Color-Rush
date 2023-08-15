@@ -12,6 +12,9 @@ public class GameManager : MonoBehaviour
     private int lifeLeft;
     public int cubeOnScreen;
     [SerializeField] private TMP_Text scoreText;
+    
+    private Difficulty currentLevel;
+    public Difficulty CurrentLevel => currentLevel;
     public bool CanGenerateCube => cubeOnScreen < data.maxCubeOnScreen;
     
     public int score = 0;
@@ -26,13 +29,17 @@ public class GameManager : MonoBehaviour
     {
         scoreText.text = $"Score : {score}";
 
-        if (Time.time - elapsedTime > 60)
+        if (Time.time - elapsedTime > currentLevel.duration)
         {
             elapsedTime = Time.time;
+            if (levelIndex != data.difficulties.Length)
+            {
+                levelIndex++;
+                currentLevel = data.difficulties[levelIndex];
+            }
             coef += data.coef;
         }
     }
-
     public int Life
     {
         get => lifeLeft;
@@ -40,12 +47,12 @@ public class GameManager : MonoBehaviour
     }
 
     private float elapsedTime = 0;
-    
+    private int levelIndex = 0;
     void Start()
     {
         lifeLeft = data.lifeNumber;
         coef = data.coef;
-
+        
     }
     void Awake()
     {
@@ -53,5 +60,6 @@ public class GameManager : MonoBehaviour
             instance = this;
         else
             Destroy(gameObject);
+        currentLevel = data.difficulties[0];
     }
 }

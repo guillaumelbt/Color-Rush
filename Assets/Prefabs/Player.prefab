@@ -240,6 +240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bff6000cfbc04d448916e6cdbfff93e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  data: {fileID: 11400000, guid: 28436d06bb821584d89ac86272df7df1, type: 2}
   accelSpeed: 150
   maxForce: 200
   dashDuration: 0.2

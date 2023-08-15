@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifeNumber: 3
   maxCubeOnScreen: 3
+  difficulties:
+  - {fileID: 11400000, guid: fb5098663131cf543a2f00ae598a2d58, type: 2}
   coef: 1.5
   point: 100
   pointCurve:
@@ -49,12 +51,6 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  maxSpeed: 6
-  maximumForce: 200
-  accelerationSpeed: 150
-  dashDuration: 0.2
-  dashDistance: 3
-  probability: {x: 0.4, y: 0.2, z: 0}
   cooldown: 5
   colors:
   - {r: 1, g: 0, b: 0, a: 1}

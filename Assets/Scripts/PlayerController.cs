@@ -11,6 +11,8 @@ using UnityEngine.InputSystem.Controls;
 [RequireComponent(typeof(PlayerInput))]
 public class PlayerController : MonoBehaviour
 {
+    
+    [SerializeField] private PlayerData data;
     [SerializeField] private float accelSpeed;
     [SerializeField] private float maxForce;
     
@@ -40,11 +42,11 @@ public class PlayerController : MonoBehaviour
 
     void InitData()
     {
-        accelSpeed = GameManager.instance.data.accelerationSpeed;
-        maxForce = GameManager.instance.data.maximumForce;
-        speed = GameManager.instance.data.maxSpeed;
-        dashDistance = GameManager.instance.data.dashDistance;
-        dashDuration = GameManager.instance.data.dashDuration;
+        accelSpeed = data.accelerationSpeed;
+        maxForce = data.maximumForce;
+        speed = data.maxSpeed;
+        dashDistance = data.dashDistance;
+        dashDuration = data.dashDuration;
     }
 
     private void Update()
