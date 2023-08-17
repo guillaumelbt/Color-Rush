@@ -98,6 +98,7 @@ public class Station : MonoBehaviour
         float rnd = Random.Range(0f, 1f);
         if (rnd <= probability)
         {
+            GameManager.instance.cubeOnScreen++;
             state = StationState.Cube;
             GameObject go = Pooler.instance.Pop("Cube");
             cube = go.GetComponent<Cube>();
@@ -127,6 +128,7 @@ public class Station : MonoBehaviour
 
     public void RemoveCube()
     {
+        GameManager.instance.cubeOnScreen--;
         elapsedTime = Time.time;
         state = StationState.Cooldown;
         Pooler.instance.Depop("Cube",cube.gameObject);

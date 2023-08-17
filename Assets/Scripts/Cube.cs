@@ -10,10 +10,9 @@ public class Cube : MonoBehaviour
 {
     private float lifeTime;
     private float elapsedTime = 0;
-
+    private SpriteRenderer sr;
     public float LifeTime => (Time.time - elapsedTime) / lifeTime;
     public bool isAlive => Time.time - elapsedTime > lifeTime;
-    private SpriteRenderer sr;
     public Color color;
 
     private void Awake()
@@ -29,6 +28,13 @@ public class Cube : MonoBehaviour
     private void OnEnable()
     {
         elapsedTime = Time.time;
+        sr.material.SetFloat("_DissolveValue", 1f);
+    }
+
+
+    void Update()
+    {
+        sr.material.SetFloat("_DissolveValue", 1 - LifeTime);
     }
 
     public void ChangeColor()
@@ -40,8 +46,7 @@ public class Cube : MonoBehaviour
             var rnd = Random.Range(0, GameManager.instance.data.colors.Length);
             color = GameManager.instance.data.colors[rnd];
         }
-        
-        sr.color = color;
+        sr.material.SetColor("_Color",color);
         
     }
 }

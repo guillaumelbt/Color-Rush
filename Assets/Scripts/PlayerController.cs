@@ -28,7 +28,9 @@ public class PlayerController : MonoBehaviour
     private Vector2 lastDirection = Vector2.up;
     private bool isDashing;
     private float lifeTime;
-    
+
+    private bool dashInCd = false;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -94,13 +96,16 @@ public class PlayerController : MonoBehaviour
     
     public void Dash()
     {
-        if (isDashing) return;
+        if (isDashing || dashInCd) return;
         rb.velocity = Vector3.zero;
         isDashing = true;
-
+        dashInCd = true;
         float dur = dashDuration;
+        float dur2 = data.dashCooldown;
 
-        DOTween.To(() => dur, x => dur = x, 0, dashDuration).OnComplete(()=>isDashing = false);
+        DOTween.To(() => dur, x => dur = x, 0, dashDuration).OnComplete(() => isDashing = false);
+
+        DOTween.To(() => dur2, x => dur2 = x, 0, data.dashCooldown).OnComplete(()=>dashInCd = false);
         
         var direction = inputs.actions["Movement"].ReadValue<Vector2>().normalized;
         if (direction == Vector2.zero) direction = lastDirection.normalized;
@@ -138,8 +143,9 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            if (col.CompareTag("Generator"))
+            if (col.GetComponent<Generator>())
             {
+                col.GetComponent<Generator>().Score(sr.color);
                 sr.color = Color.white;
                 GameManager.instance.score += score;
                 Debug.Log(GameManager.instance.score);
