@@ -15,7 +15,7 @@ MonoBehaviour:
   lifeNumber: 3
   maxCubeOnScreen: 3
   difficulties:
-  - {fileID: 11400000, guid: fb5098663131cf543a2f00ae598a2d58, type: 2}
+  - {fileID: 11400000, guid: 81ad8b17db146114aab3f7991cccaac2, type: 2}
   coef: 1.5
   point: 100
   pointCurve:
