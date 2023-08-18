@@ -12,10 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c37378b58c633e843ab275e65551c34a, type: 3}
   m_Name: Data
   m_EditorClassIdentifier: 
-  lifeNumber: 3
-  maxCubeOnScreen: 3
+  lifeNumber: 4
   difficulties:
+  - {fileID: 11400000, guid: fb5098663131cf543a2f00ae598a2d58, type: 2}
   - {fileID: 11400000, guid: 81ad8b17db146114aab3f7991cccaac2, type: 2}
+  - {fileID: 11400000, guid: 187acfb67b827db4bb821109c2ff14e2, type: 2}
+  - {fileID: 11400000, guid: bd783093a02d8d8419fa5a55f3f2e4a7, type: 2}
+  - {fileID: 11400000, guid: 341dc27e5ea54d24887c6d5c525f89f3, type: 2}
+  - {fileID: 11400000, guid: d33458aaf9bd41b4bbff0d04d09b44ba, type: 2}
+  - {fileID: 11400000, guid: 256f0437d27e82443b36b596dc5b9e39, type: 2}
+  - {fileID: 11400000, guid: 4c92425f545857b4e98cdb7c1d6dff2a, type: 2}
+  - {fileID: 11400000, guid: 915a47739bbe3bb46a83198c36f6eff8, type: 2}
+  - {fileID: 11400000, guid: 92a2e8cb70151ed41bdf00766ee6ddda, type: 2}
+  - {fileID: 11400000, guid: d4205bf7248b98f41a92ab4de5039ec5, type: 2}
+  - {fileID: 11400000, guid: 5a030a70a82b3584e8eba7d3a8d089c5, type: 2}
   coef: 1.5
   point: 100
   pointCurve:
@@ -24,17 +34,35 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: 1
-      inSlope: -1
-      outSlope: -1
+      inSlope: -0.24523911
+      outSlope: -0.24523911
       tangentMode: 34
       weightedMode: 0
       inWeight: 0
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.5
-      value: 0.5
-      inSlope: -1
-      outSlope: -1
+      time: 0.33333588
+      value: 0.918253
+      inSlope: -0.31381348
+      outSlope: -0.31381348
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.44679794
+    - serializedVersion: 3
+      time: 0.74583435
+      value: 0.6508026
+      inSlope: -1.2544407
+      outSlope: -1.2544407
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 1
+    - serializedVersion: 3
+      time: 0.91667175
+      value: 0.33125407
+      inSlope: -2.9228876
+      outSlope: -2.9228876
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
@@ -42,8 +70,8 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 1
       value: 0
-      inSlope: -1
-      outSlope: -1
+      inSlope: -3.9752915
+      outSlope: -3.9752915
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
@@ -51,11 +79,11 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  cooldown: 5
+  cooldown: 6
   colors:
   - {r: 1, g: 0, b: 0, a: 1}
   - {r: 1, g: 0, b: 0.8082228, a: 1}
   - {r: 0.7143214, g: 1, b: 0, a: 1}
   - {r: 0.116241455, g: 0, b: 1, a: 1}
   - {r: 0, g: 0.9733317, b: 1, a: 1}
-  cubeLifeTime: 10
+  cubeLifeTime: 12

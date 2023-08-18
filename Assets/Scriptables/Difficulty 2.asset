@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c994a49c0536cf049b04f1bfdc7790ce, type: 3}
   m_Name: Difficulty 2
   m_EditorClassIdentifier: 
-  duration: 20
-  crown1Probability: 0.3
-  crown2Probability: 0.1
+  duration: 10
+  maxCubeOnScreen: 2
+  crown1Probability: 0.35
+  crown2Probability: 0.05
   crown3Probability: 0

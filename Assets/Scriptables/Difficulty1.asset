@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Difficulty1
   m_EditorClassIdentifier: 
   duration: 10
-  crown1Probability: 0.3
+  maxCubeOnScreen: 2
+  crown1Probability: 0.4
   crown2Probability: 0
   crown3Probability: 0
