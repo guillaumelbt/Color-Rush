@@ -107,24 +107,29 @@ public class PlayerController : MonoBehaviour
         float dur = dashDuration;
         float dur2 = data.dashCooldown;
 
+
+        
+
         DOTween.To(() => dur, x => dur = x, 0, dashDuration).OnComplete(() => isDashing = false);
         
         DOTween.To(() => dur2, x => dur2 = x, 0, data.dashCooldown).OnComplete(()=> 
         {
             dashInCd = false;
-            animator.ResetTrigger("DashUp");
-            animator.SetTrigger("DashUp");
+            
         }
         );
         
         var direction = inputs.actions["Movement"].ReadValue<Vector2>().normalized;
         if (direction == Vector2.zero) direction = lastDirection.normalized;
+
         
 
         float dashForce = dashDistance / dashDuration;
 
         var force = direction * dashForce * rb.mass;
         rb.AddForce(force,ForceMode2D.Impulse);
+
+        animator.SetFloat("Direction", Mathf.Abs(Vector3.Dot(force,Vector3.up)));
         animator.ResetTrigger("Dash");
         animator.SetTrigger("Dash");
 

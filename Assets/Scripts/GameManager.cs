@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     
     private Difficulty currentLevel;
     public Difficulty CurrentLevel => currentLevel;
-    public bool CanGenerateCube => cubeOnScreen < data.maxCubeOnScreen;
+    public bool CanGenerateCube => cubeOnScreen < currentLevel.maxCubeOnScreen;
     
     public int score = 0;
     private float coef;
@@ -25,6 +25,12 @@ public class GameManager : MonoBehaviour
         return Mathf.RoundToInt(data.point * data.pointCurve.Evaluate(cube.LifeTime) * coef);
     }
 
+    private void FixedUpdate()
+    {
+
+        if (Time.time % 10 == 0)
+            coef += data.coef;
+    }
     private void Update()
     {
         scoreText.text = $"Score : {score}";
@@ -32,13 +38,13 @@ public class GameManager : MonoBehaviour
         if (Time.time - elapsedTime > currentLevel.duration)
         {
             elapsedTime = Time.time;
-            if (levelIndex != data.difficulties.Length)
+            if (levelIndex < data.difficulties.Length)
             {
                 levelIndex++;
                 currentLevel = data.difficulties[levelIndex];
-            }
-            coef += data.coef;
+            }          
         }
+       
     }
 
     [SerializeField] private GameObject gameOverScreen;
@@ -60,7 +66,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         lifeLeft = data.lifeNumber;
-        coef = data.coef;
+        //coef = data.coef;
         
     }
     void Awake()

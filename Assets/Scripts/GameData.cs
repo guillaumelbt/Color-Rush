@@ -7,7 +7,7 @@ public class GameData : ScriptableObject
 {
     [Header("General Data")]
     public int lifeNumber = 3;
-    public int maxCubeOnScreen = 3;
+    
     public Difficulty[] difficulties;
     
     [Header("Score")] 
