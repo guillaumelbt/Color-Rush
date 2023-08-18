@@ -40,6 +40,15 @@ public class GameManager : MonoBehaviour
             coef += data.coef;
         }
     }
+
+    [SerializeField] private GameObject gameOverScreen;
+    [SerializeField] private GameObject menu;
+    public void GameOver()
+    {
+        Time.timeScale = 0;
+        menu.SetActive(false);
+        gameOverScreen.SetActive(true);
+    }
     public int Life
     {
         get => lifeLeft;

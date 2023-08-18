@@ -11,7 +11,7 @@ using UnityEngine.InputSystem.Controls;
 [RequireComponent(typeof(PlayerInput))]
 public class PlayerController : MonoBehaviour
 {
-    
+    [SerializeField] private Animator animator;
     [SerializeField] private PlayerData data;
     [SerializeField] private float accelSpeed;
     [SerializeField] private float maxForce;
@@ -66,14 +66,18 @@ public class PlayerController : MonoBehaviour
     private void LateUpdate()
     {
         ClampPos();
-    }
+    } 
 
     
     private void Move()
     {
         if (isDashing) return;
+
         var move = inputs.actions["Movement"].ReadValue<Vector2>().normalized;
         if (move != Vector2.zero) lastDirection = move;
+
+        animator.SetBool("moving", move != Vector2.zero);
+        
         rb.velocity = move * speed;
         
 
@@ -104,8 +108,14 @@ public class PlayerController : MonoBehaviour
         float dur2 = data.dashCooldown;
 
         DOTween.To(() => dur, x => dur = x, 0, dashDuration).OnComplete(() => isDashing = false);
-
-        DOTween.To(() => dur2, x => dur2 = x, 0, data.dashCooldown).OnComplete(()=>dashInCd = false);
+        
+        DOTween.To(() => dur2, x => dur2 = x, 0, data.dashCooldown).OnComplete(()=> 
+        {
+            dashInCd = false;
+            animator.ResetTrigger("DashUp");
+            animator.SetTrigger("DashUp");
+        }
+        );
         
         var direction = inputs.actions["Movement"].ReadValue<Vector2>().normalized;
         if (direction == Vector2.zero) direction = lastDirection.normalized;
@@ -115,6 +125,8 @@ public class PlayerController : MonoBehaviour
 
         var force = direction * dashForce * rb.mass;
         rb.AddForce(force,ForceMode2D.Impulse);
+        animator.ResetTrigger("Dash");
+        animator.SetTrigger("Dash");
 
     }
         

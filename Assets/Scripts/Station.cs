@@ -115,7 +115,7 @@ public class Station : MonoBehaviour
         GameManager.instance.Life--;
         if (GameManager.instance.Life == 0)
         {
-            SceneManager.LoadScene(0);
+            GameManager.instance.GameOver();
         }
     }
 

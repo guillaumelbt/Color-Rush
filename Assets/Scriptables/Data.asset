@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c37378b58c633e843ab275e65551c34a, type: 3}
   m_Name: Data
   m_EditorClassIdentifier: 
-  lifeNumber: 672
+  lifeNumber: 3
   maxCubeOnScreen: 3
   difficulties:
   - {fileID: 11400000, guid: fb5098663131cf543a2f00ae598a2d58, type: 2}
