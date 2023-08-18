@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
     private void FixedUpdate()
     {
 
-        if (Time.time % 60 == 0)
+        if (Time.time % data.coefTimer == 0)
             coef += data.coef;
     }
     private void Update()

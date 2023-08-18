@@ -12,6 +12,7 @@ public class GameData : ScriptableObject
     
     [Header("Score")] 
     public float coef = 1.5f;
+    public int coefTimer = 30;
     public float point = 100;
     public AnimationCurve pointCurve;
     
