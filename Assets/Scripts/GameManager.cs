@@ -12,11 +12,14 @@ public class GameManager : MonoBehaviour
     private int lifeLeft;
     public int cubeOnScreen;
     [SerializeField] private TMP_Text scoreText;
-    
+    [SerializeField] public Transform lifeParent;
     private Difficulty currentLevel;
     public Difficulty CurrentLevel => currentLevel;
     public bool CanGenerateCube => cubeOnScreen < currentLevel.maxCubeOnScreen;
     
+
+
+
     public int score = 0;
     private float coef;
 

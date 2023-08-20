@@ -27,6 +27,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d4205bf7248b98f41a92ab4de5039ec5, type: 2}
   - {fileID: 11400000, guid: 5a030a70a82b3584e8eba7d3a8d089c5, type: 2}
   coef: 1.5
+  coefTimer: 30
   point: 100
   pointCurve:
     serializedVersion: 2

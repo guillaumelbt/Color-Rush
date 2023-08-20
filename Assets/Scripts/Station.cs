@@ -113,6 +113,8 @@ public class Station : MonoBehaviour
         if (!(cube.isAlive)) return;
         RemoveCube();
         GameManager.instance.Life--;
+        if(GameManager.instance.Life<=3)
+            GameManager.instance.lifeParent.GetChild(GameManager.instance.Life-1).gameObject.SetActive(false);
         if (GameManager.instance.Life == 0)
         {
             GameManager.instance.GameOver();
