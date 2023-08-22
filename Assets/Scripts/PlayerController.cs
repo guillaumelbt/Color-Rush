@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Controls;
+using static UnityEngine.InputSystem.InputAction;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(PlayerInput))]
@@ -66,9 +67,17 @@ public class PlayerController : MonoBehaviour
     private void LateUpdate()
     {
         ClampPos();
-    } 
+    }
 
-    
+    [SerializeField] private GameObject menu;
+    public void Menu(CallbackContext ctx)
+    {
+        if (!ctx.started) return;
+        if (GameManager.instance.Life == 0) return;
+        menu.SetActive(!menu.activeSelf);
+        Time.timeScale = menu.activeSelf ? 0 : 1;
+    }
+
     private void Move()
     {
         if (isDashing) return;

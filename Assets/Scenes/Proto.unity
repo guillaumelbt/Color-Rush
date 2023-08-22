@@ -390,6 +390,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &353523563 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2423733573348236754, guid: df1a25925f7ff9149a9a8d0401085da3, type: 3}
+  m_PrefabInstance: {fileID: 1530503259}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bff6000cfbc04d448916e6cdbfff93e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &363944099
 GameObject:
   m_ObjectHideFlags: 0
@@ -7075,6 +7086,50 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2423733573348236754, guid: df1a25925f7ff9149a9a8d0401085da3, type: 3}
+      propertyPath: menu
+      value: 
+      objectReference: {fileID: 92377173}
+    - target: {fileID: 2423733573348236755, guid: df1a25925f7ff9149a9a8d0401085da3, type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2423733573348236755, guid: df1a25925f7ff9149a9a8d0401085da3, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_ActionId
+      value: c60eed15-96a6-4f53-84f6-7c8d982a1b40
+      objectReference: {fileID: 0}
+    - target: {fileID: 2423733573348236755, guid: df1a25925f7ff9149a9a8d0401085da3, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_ActionName
+      value: Player/Menu[/Keyboard/escape]
+      objectReference: {fileID: 0}
+    - target: {fileID: 2423733573348236755, guid: df1a25925f7ff9149a9a8d0401085da3, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2423733573348236755, guid: df1a25925f7ff9149a9a8d0401085da3, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2423733573348236755, guid: df1a25925f7ff9149a9a8d0401085da3, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 353523563}
+    - target: {fileID: 2423733573348236755, guid: df1a25925f7ff9149a9a8d0401085da3, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2423733573348236755, guid: df1a25925f7ff9149a9a8d0401085da3, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Menu
+      objectReference: {fileID: 0}
+    - target: {fileID: 2423733573348236755, guid: df1a25925f7ff9149a9a8d0401085da3, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PlayerController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2423733573348236755, guid: df1a25925f7ff9149a9a8d0401085da3, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2423733573348236767, guid: df1a25925f7ff9149a9a8d0401085da3, type: 3}
       propertyPath: m_Name
       value: Player
@@ -7682,18 +7737,6 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1848475974}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &1722855907
 MonoBehaviour:
@@ -8743,7 +8786,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1848475975
 RectTransform:
   m_ObjectHideFlags: 0
