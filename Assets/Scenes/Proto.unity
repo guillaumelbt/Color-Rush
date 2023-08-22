@@ -5120,6 +5120,50 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2423733573348236754, guid: df1a25925f7ff9149a9a8d0401085da3, type: 3}
+      propertyPath: menu
+      value: 
+      objectReference: {fileID: 92377173}
+    - target: {fileID: 2423733573348236755, guid: df1a25925f7ff9149a9a8d0401085da3, type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2423733573348236755, guid: df1a25925f7ff9149a9a8d0401085da3, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_ActionId
+      value: c60eed15-96a6-4f53-84f6-7c8d982a1b40
+      objectReference: {fileID: 0}
+    - target: {fileID: 2423733573348236755, guid: df1a25925f7ff9149a9a8d0401085da3, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_ActionName
+      value: Player/Menu[/Keyboard/escape]
+      objectReference: {fileID: 0}
+    - target: {fileID: 2423733573348236755, guid: df1a25925f7ff9149a9a8d0401085da3, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2423733573348236755, guid: df1a25925f7ff9149a9a8d0401085da3, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2423733573348236755, guid: df1a25925f7ff9149a9a8d0401085da3, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 353523563}
+    - target: {fileID: 2423733573348236755, guid: df1a25925f7ff9149a9a8d0401085da3, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2423733573348236755, guid: df1a25925f7ff9149a9a8d0401085da3, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Menu
+      objectReference: {fileID: 0}
+    - target: {fileID: 2423733573348236755, guid: df1a25925f7ff9149a9a8d0401085da3, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PlayerController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2423733573348236755, guid: df1a25925f7ff9149a9a8d0401085da3, type: 3}
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2423733573348236767, guid: df1a25925f7ff9149a9a8d0401085da3, type: 3}
       propertyPath: m_Name
       value: Player
