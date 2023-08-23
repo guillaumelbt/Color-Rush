@@ -1015,6 +1015,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioManager
       objectReference: {fileID: 0}
+    - target: {fileID: 4834247373109332263, guid: 3530f3179b7ec3a489c2c9769e1add26, type: 3}
+      propertyPath: sounds.Array.data[0].volume
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4834247373109332263, guid: 3530f3179b7ec3a489c2c9769e1add26, type: 3}
+      propertyPath: sounds.Array.data[7].volume
+      value: 0.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3530f3179b7ec3a489c2c9769e1add26, type: 3}
 --- !u!1001 &1448186176
@@ -1647,6 +1655,22 @@ PrefabInstance:
     - target: {fileID: 9188878869513245839, guid: 20f77dfc666cb4e4fba537560fb31ea6, type: 3}
       propertyPath: m_Name
       value: UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 9188878870648588208, guid: 20f77dfc666cb4e4fba537560fb31ea6, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 628.4382
+      objectReference: {fileID: 0}
+    - target: {fileID: 9188878870648588208, guid: 20f77dfc666cb4e4fba537560fb31ea6, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 600
+      objectReference: {fileID: 0}
+    - target: {fileID: 9188878870648588211, guid: 20f77dfc666cb4e4fba537560fb31ea6, type: 3}
+      propertyPath: m_text
+      value: 'Score: '
+      objectReference: {fileID: 0}
+    - target: {fileID: 9188878870648588211, guid: 20f77dfc666cb4e4fba537560fb31ea6, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20f77dfc666cb4e4fba537560fb31ea6, type: 3}
