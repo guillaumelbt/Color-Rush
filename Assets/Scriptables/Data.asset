@@ -87,4 +87,4 @@ MonoBehaviour:
   - {r: 0.7143214, g: 1, b: 0, a: 1}
   - {r: 0.116241455, g: 0, b: 1, a: 1}
   - {r: 0, g: 0.9733317, b: 1, a: 1}
-  cubeLifeTime: 12
+  cubeLifeTime: 13
