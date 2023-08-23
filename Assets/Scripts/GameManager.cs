@@ -58,6 +58,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0;
         menu.SetActive(false);
         gameOverScreen.SetActive(true);
+        AudioManager.instance.StopPlaying("Music");
     }
     public int Life
     {

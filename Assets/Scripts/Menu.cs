@@ -14,7 +14,7 @@ public class Menu : MonoBehaviour
 
     public void Click(CallbackContext ctx)
     {
-        if (!ctx.canceled) return;
+        if (!ctx.started) return;
         if (EventSystem.current.currentSelectedGameObject is not null)
         {
             EventSystem.current.currentSelectedGameObject.GetComponent<Button>().onClick.Invoke();
@@ -33,6 +33,7 @@ public class Menu : MonoBehaviour
     
     public void MainMenu()
     {
+        AudioManager.instance.StopPlaying("Music");
         SceneManager.LoadScene(0);
     }
     public void Restart()
