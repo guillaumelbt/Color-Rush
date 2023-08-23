@@ -116,7 +116,7 @@ public class Station : MonoBehaviour
         GameManager.instance.Life--;
         AudioManager.instance.Play("Life");
         
-        if (GameManager.instance.Life == 0)
+        if (GameManager.instance.Life <= 0)
         {
             AudioManager.instance.Play("EndGame");
             GameManager.instance.GameOver();
