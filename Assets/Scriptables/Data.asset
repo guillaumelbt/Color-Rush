@@ -15,17 +15,14 @@ MonoBehaviour:
   lifeNumber: 4
   difficulties:
   - {fileID: 11400000, guid: fb5098663131cf543a2f00ae598a2d58, type: 2}
+  - {fileID: 11400000, guid: e7b31d2f125631c4b91a119d86c99912, type: 2}
+  - {fileID: 11400000, guid: 8b7dc42e9d5331548b0486b34c266ff4, type: 2}
   - {fileID: 11400000, guid: 81ad8b17db146114aab3f7991cccaac2, type: 2}
   - {fileID: 11400000, guid: 187acfb67b827db4bb821109c2ff14e2, type: 2}
   - {fileID: 11400000, guid: bd783093a02d8d8419fa5a55f3f2e4a7, type: 2}
   - {fileID: 11400000, guid: 341dc27e5ea54d24887c6d5c525f89f3, type: 2}
   - {fileID: 11400000, guid: d33458aaf9bd41b4bbff0d04d09b44ba, type: 2}
   - {fileID: 11400000, guid: 256f0437d27e82443b36b596dc5b9e39, type: 2}
-  - {fileID: 11400000, guid: 4c92425f545857b4e98cdb7c1d6dff2a, type: 2}
-  - {fileID: 11400000, guid: 915a47739bbe3bb46a83198c36f6eff8, type: 2}
-  - {fileID: 11400000, guid: 92a2e8cb70151ed41bdf00766ee6ddda, type: 2}
-  - {fileID: 11400000, guid: d4205bf7248b98f41a92ab4de5039ec5, type: 2}
-  - {fileID: 11400000, guid: 5a030a70a82b3584e8eba7d3a8d089c5, type: 2}
   coef: 1.5
   coefTimer: 30
   point: 100
@@ -82,9 +79,11 @@ MonoBehaviour:
     m_RotationOrder: 4
   cooldown: 6
   colors:
-  - {r: 1, g: 0, b: 0, a: 1}
-  - {r: 1, g: 0, b: 0.8082228, a: 1}
-  - {r: 0.7143214, g: 1, b: 0, a: 1}
-  - {r: 0.116241455, g: 0, b: 1, a: 1}
-  - {r: 0, g: 0.9733317, b: 1, a: 1}
+  - {r: 1, g: 0.56505483, b: 0.4078431, a: 1}
+  - {r: 1, g: 0.3339622, b: 0.8707688, a: 1}
+  - {r: 0.42830187, g: 1, b: 0.4581672, a: 1}
+  - {r: 0.48490566, g: 0.611467, b: 1, a: 1}
+  - {r: 0.52156866, g: 1, b: 0.83514524, a: 1}
+  - {r: 0.749434, g: 0.53207546, b: 1, a: 1}
+  - {r: 1, g: 0.93627435, b: 0.53207546, a: 1}
   cubeLifeTime: 13

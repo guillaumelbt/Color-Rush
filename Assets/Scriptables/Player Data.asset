@@ -15,6 +15,6 @@ MonoBehaviour:
   maxSpeed: 8
   maximumForce: 200
   accelerationSpeed: 150
-  dashDuration: 0.2
-  dashDistance: 3
+  dashDuration: 0.12
+  dashDistance: 3.7
   dashCooldown: 1
