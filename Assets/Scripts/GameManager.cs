@@ -45,6 +45,7 @@ public class GameManager : MonoBehaviour
             {
                 levelIndex++;
                 currentLevel = data.difficulties[levelIndex];
+                Debug.Log(currentLevel.name);
             }          
         }
        

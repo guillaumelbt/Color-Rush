@@ -177,7 +177,6 @@ public class PlayerController : MonoBehaviour
                 col.GetComponent<Generator>().Score(sr.color);
                 sr.color = Color.white;
                 GameManager.instance.score += score;
-                Debug.Log(GameManager.instance.score);
             }
         }
     }
