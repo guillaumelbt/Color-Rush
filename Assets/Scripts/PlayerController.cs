@@ -139,7 +139,7 @@ public class PlayerController : MonoBehaviour
         var force = direction * dashForce * rb.mass;
         rb.AddForce(force,ForceMode2D.Impulse);
 
-        animator.SetFloat("Direction", Mathf.Abs(Vector3.Dot(force,Vector3.up)));
+        animator.SetFloat("Direction", Mathf.Abs(Vector3.Dot(direction,Vector3.up)));
         animator.ResetTrigger("Dash");
         animator.SetTrigger("Dash");
 
