@@ -1055,12 +1055,40 @@ PrefabInstance:
       value: AudioManager
       objectReference: {fileID: 0}
     - target: {fileID: 4834247373109332263, guid: 3530f3179b7ec3a489c2c9769e1add26, type: 3}
+      propertyPath: sfxMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: 2658d07438d637f498bafbc2b5dfe91e, type: 2}
+    - target: {fileID: 4834247373109332263, guid: 3530f3179b7ec3a489c2c9769e1add26, type: 3}
+      propertyPath: musicMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: 67fb73c24cfb8ce459c9103c8a8632eb, type: 2}
+    - target: {fileID: 4834247373109332263, guid: 3530f3179b7ec3a489c2c9769e1add26, type: 3}
       propertyPath: sounds.Array.data[4].pitch
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4834247373109332263, guid: 3530f3179b7ec3a489c2c9769e1add26, type: 3}
+      propertyPath: sounds.Array.data[0].volume
+      value: 0.499
+      objectReference: {fileID: 0}
+    - target: {fileID: 4834247373109332263, guid: 3530f3179b7ec3a489c2c9769e1add26, type: 3}
+      propertyPath: sounds.Array.data[1].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4834247373109332263, guid: 3530f3179b7ec3a489c2c9769e1add26, type: 3}
+      propertyPath: sounds.Array.data[2].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4834247373109332263, guid: 3530f3179b7ec3a489c2c9769e1add26, type: 3}
+      propertyPath: sounds.Array.data[3].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4834247373109332263, guid: 3530f3179b7ec3a489c2c9769e1add26, type: 3}
       propertyPath: sounds.Array.data[4].volume
-      value: 0.666
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4834247373109332263, guid: 3530f3179b7ec3a489c2c9769e1add26, type: 3}
+      propertyPath: sounds.Array.data[5].volume
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4834247373109332263, guid: 3530f3179b7ec3a489c2c9769e1add26, type: 3}
       propertyPath: sounds.Array.data[6].volume

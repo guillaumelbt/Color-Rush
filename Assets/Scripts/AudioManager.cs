@@ -34,7 +34,11 @@ public class AudioManager : MonoBehaviour
         {
             s.source = gameObject.AddComponent<AudioSource>();
             s.source.clip = s.clip;
+            Debug.Log(s.source.volume);
+            Debug.Log(s.volume);
             s.source.volume = s.volume;
+            Debug.Log(s.source.volume);
+            Debug.Log(s.volume);
             s.source.pitch = s.pitch;
             s.source.loop = s.loop;
 
@@ -62,11 +66,11 @@ public class AudioManager : MonoBehaviour
         volumeScriptable.globalVolume = volume;
         foreach (var s in sounds.Where(s => s.audioType == Sound.AudioTypes.sfx))
         {
-            s.source.volume = 1 * volumeScriptable.sfxVolume * volumeScriptable.globalVolume;
+            s.source.volume = s.source.volume * volumeScriptable.sfxVolume * volumeScriptable.globalVolume;
         }
         foreach (var s in sounds.Where(s => s.audioType == Sound.AudioTypes.music))
         {
-            s.source.volume = 1 * volumeScriptable.musicVolume * volumeScriptable.globalVolume;
+            s.source.volume = s.source.volume * volumeScriptable.musicVolume * volumeScriptable.globalVolume;
         }
     }
     
@@ -75,7 +79,7 @@ public class AudioManager : MonoBehaviour
         volumeScriptable.musicVolume = volume;
         foreach (var s in sounds.Where(s => s.audioType == Sound.AudioTypes.music))
         {
-            s.source.volume = 1 * volumeScriptable.musicVolume * volumeScriptable.globalVolume;
+            s.source.volume = s.source.volume * volumeScriptable.musicVolume * volumeScriptable.globalVolume;
         }
     }
     
@@ -84,7 +88,7 @@ public class AudioManager : MonoBehaviour
         volumeScriptable.sfxVolume = volume;
         foreach (var s in sounds.Where(s => s.audioType == Sound.AudioTypes.sfx))
         {
-            s.source.volume = 1 * volumeScriptable.sfxVolume * volumeScriptable.globalVolume;
+            s.source.volume = s.source.volume * volumeScriptable.sfxVolume * volumeScriptable.globalVolume;
         }
     }
 
