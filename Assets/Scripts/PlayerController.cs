@@ -73,6 +73,7 @@ public class PlayerController : MonoBehaviour
     public void Menu(CallbackContext ctx)
     {
         if (!ctx.started) return;
+        AudioManager.instance.Play("UI");
         if (GameManager.instance.Life == 0) return;
         menu.SetActive(!menu.activeSelf);
         Time.timeScale = menu.activeSelf ? 0 : 1;
@@ -160,6 +161,7 @@ public class PlayerController : MonoBehaviour
         {
             if (col.GetComponent<Station>())
             {
+                AudioManager.instance.Play("PlayerColor");
                 var station = col.GetComponent<Station>();
                 if (!station.HasCube) return;
                 score = GameManager.instance.CalculateScore(station.CurrentCube);
@@ -171,6 +173,7 @@ public class PlayerController : MonoBehaviour
         {
             if (col.GetComponent<Generator>())
             {
+                AudioManager.instance.Play("Depot");
                 col.GetComponent<Generator>().Score(sr.color);
                 sr.color = Color.white;
                 GameManager.instance.score += score;

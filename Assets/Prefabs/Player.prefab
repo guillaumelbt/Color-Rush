@@ -245,6 +245,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: dfe6a261-fc99-4183-a54d-e827dd0c712d
     m_ActionName: Player/Dash[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2423733573348236754}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: Menu
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: c60eed15-96a6-4f53-84f6-7c8d982a1b40
+    m_ActionName: Player/Menu[/Keyboard/escape]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -270,6 +286,7 @@ MonoBehaviour:
   dashDistance: 4
   speed: 6
   sr: {fileID: 2423733572806550457}
+  menu: {fileID: 0}
 --- !u!50 &2423733573348236753
 Rigidbody2D:
   serializedVersion: 4

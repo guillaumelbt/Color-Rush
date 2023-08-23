@@ -69,8 +69,10 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         lifeLeft = data.lifeNumber;
+        AudioManager.instance.Play("GameStart");
+        AudioManager.instance.Play("Music");
         //coef = data.coef;
-        
+
     }
     void Awake()
     {

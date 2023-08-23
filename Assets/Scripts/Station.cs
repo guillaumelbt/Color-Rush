@@ -98,6 +98,7 @@ public class Station : MonoBehaviour
         float rnd = Random.Range(0f, 1f);
         if (rnd <= probability)
         {
+            AudioManager.instance.Play("Color");
             GameManager.instance.cubeOnScreen++;
             state = StationState.Cube;
             GameObject go = Pooler.instance.Pop("Cube");
@@ -113,12 +114,16 @@ public class Station : MonoBehaviour
         if (!(cube.isAlive)) return;
         RemoveCube();
         GameManager.instance.Life--;
-        if(GameManager.instance.Life<=3)
-            GameManager.instance.lifeParent.GetChild(GameManager.instance.Life-1).gameObject.SetActive(false);
+        AudioManager.instance.Play("Life");
+        
         if (GameManager.instance.Life == 0)
         {
+            AudioManager.instance.Play("EndGame");
             GameManager.instance.GameOver();
+            return;
         }
+        if (GameManager.instance.Life <= 3)
+            GameManager.instance.lifeParent.GetChild(GameManager.instance.Life - 1).gameObject.SetActive(false);
     }
 
     private void Cooldown()
